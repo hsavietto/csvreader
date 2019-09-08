@@ -43,6 +43,10 @@ public class CSVReader<T> implements Iterable<T> {
                 return null;
             }
 
+            if(line == null) {
+                return null;
+            }
+
             List<String> values = Arrays.asList(line.split(separator));
             return lineConverter.convert(new CSVLine(values, lineDefinition));
         }
